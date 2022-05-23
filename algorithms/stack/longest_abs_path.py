@@ -1,38 +1,3 @@
-# def lengthLongestPath(input):
-#     maxlen = 0
-#     pathlen = {0: 0}
-#     for line in input.splitlines():
-#         print("---------------")
-#         print("line:", line)
-#         name = line.strip('\t')
-#         print("name:", name)
-#         depth = len(line) - len(name)
-#         print("depth:", depth)
-#         if '.' in name:
-#             maxlen = max(maxlen, pathlen[depth] + len(name))
-#         else:
-#             pathlen[depth + 1] = pathlen[depth] + len(name) + 1
-#         print("maxlen:", maxlen)
-#     return maxlen
-
-# def lengthLongestPath(input):
-#     paths = input.split("\n")
-#     level = [0] * 10
-#     maxLength = 0
-#     for path in paths:
-#         print("-------------")
-#         levelIdx = path.rfind("\t")
-#         print("Path: ", path)
-#         print("path.rfind(\\t)", path.rfind("\t"))
-#         print("levelIdx: ", levelIdx)
-#         print("level: ", level)
-#         level[levelIdx + 1] = level[levelIdx] + len(path) - levelIdx + 1
-#         print("level: ", level)
-#         if "." in path:
-#             maxLength = max(maxLength, level[levelIdx+1] - 1)
-#             print("maxlen: ", maxLength)
-#     return maxLength
-
 def length_longest_path(input):
     """
     :type input: str
