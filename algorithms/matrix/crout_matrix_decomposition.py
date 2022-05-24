@@ -27,22 +27,22 @@ I think the complexity should be O(n^3).
 """
 
 
-def crout_matrix_decomposition(A):
-    n = len(A)
-    L = [[0.0] * n for i in range(n)]
-    U = [[0.0] * n for i in range(n)]
+def crout_matrix_decomposition(matrix):
+    n = len(matrix)
+    L = [[0.0] * n for _ in range(n)]
+    U = [[0.0] * n for _ in range(n)]
     for j in range(n):
         U[j][j] = 1.0
         for i in range(j, n):
-            alpha = float(A[i][j])
+            alpha = float(matrix[i][j])
             for k in range(j):
                 alpha -= L[i][k]*U[k][j]
             L[i][j] = float(alpha)
         for i in range(j+1, n):
-            tempU = float(A[j][i])
+            temp = float(matrix[j][i])
             for k in range(j):
-                tempU -= float(L[j][k]*U[k][i])
+                temp -= float(L[j][k]*U[k][i])
             if int(L[j][j]) == 0:
                 L[j][j] = float(0.1**40)
-            U[j][i] = float(tempU/L[j][j])
+            U[j][i] = float(temp/L[j][j])
     return (L, U)
