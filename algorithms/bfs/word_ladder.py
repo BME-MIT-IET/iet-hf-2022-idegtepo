@@ -59,8 +59,7 @@ def ladder_length(begin_word, end_word, word_list):
                     word_list.remove(ladder_word)
         begin_set = next_begin_set
         result += 1
-        # print(begin_set)
-        # print(result)
+
     return -1
 
 
