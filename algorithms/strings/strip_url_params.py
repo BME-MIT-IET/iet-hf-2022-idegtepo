@@ -37,34 +37,38 @@ def strip_url_params1(url, params_to_strip=None):
                     string = ''
                 else:
                     string += char
-            dict = defaultdict(int)
+            dictionary = defaultdict(int)
             # logic for checking whether we should add the string to our result
             for i in key_value_string:
                 _token = i.split('=')
                 if _token[0]:
                     length = len(_token[0])
                     if length == 1:
-                        if _token and (not(_token[0] in dict)):
-                            if params_to_strip:
-                                if _token[0] != params_to_strip[0]:
-                                    dict[_token[0]] = _token[1]
-                                    result = result + _token[0] + '=' + _token[1]
-                            else:
-                                if not _token[0] in dict:
-                                    dict[_token[0]] = _token[1]
-                                    result = result + _token[0] + '=' + _token[1]
+                        if not _token or (_token[0] in dictionary):
+                            continue
+                        if params_to_strip:
+                            if _token[0] != params_to_strip[0]:
+                                dictionary[_token[0]] = _token[1]
+                                result = result + _token[0] + '=' + _token[1]
+                        else:
+                            if _token[0] in dictionary:
+                                continue
+                            dictionary[_token[0]] = _token[1]
+                            result = result + _token[0] + '=' + _token[1]
                     else:
                         check = _token[0]
                         letter = check[1]
-                        if _token and (not(letter in dict)):
-                            if params_to_strip:
-                                if letter != params_to_strip[0]:
-                                    dict[letter] = _token[1]
-                                    result = result + _token[0] + '=' + _token[1]
-                            else:
-                                if not letter in dict:
-                                    dict[letter] = _token[1]
-                                    result = result + _token[0] + '=' + _token[1]
+                        if not _token or (letter in dictionary):
+                            continue
+                        if params_to_strip:
+                            if letter != params_to_strip[0]:
+                                dictionary[letter] = _token[1]
+                                result = result + _token[0] + '=' + _token[1]
+                        else:
+                            if letter in dictionary:
+                                continue
+                            dictionary[letter] = _token[1]
+                            result = result + _token[0] + '=' + _token[1]
     return result
 
 # A very friendly pythonic solution (easy to follow)
