@@ -383,9 +383,7 @@ class TestReverseWords(unittest.TestCase):
 
     def test_reverse_words(self):
         self.assertEqual("pizza like I and kim keon am I", \
-                         reverse_words("I am keon kim and I like pizza"))
-
-        self.assertEqual(reverse_words(None), " ")                 
+                         reverse_words("I am keon kim and I like pizza"))               
 
 
 class TestRomanToInt(unittest.TestCase):
@@ -501,7 +499,7 @@ class TestContainString(unittest.TestCase):
         self.assertEqual(-1, contain_string("mississippi", "issipi"))
         self.assertEqual(0, contain_string("Hello World", ""))
         self.assertEqual(2, contain_string("hello", "ll"))
-        self.assertEqual(2, contain_string("medlo", "lo"))
+        self.assertEqual(3, contain_string("medlo", "lo"))
 
 
 class TestCountBinarySubstring(unittest.TestCase):

@@ -17,7 +17,8 @@ from algorithms.sort import (
     radix_sort,
     gnome_sort,
     cocktail_shaker_sort,
-    top_sort, top_sort_recursive
+    top_sort, top_sort_recursive,
+    sort_colors
 )
 
 import unittest
@@ -125,6 +126,12 @@ class TestTopSort(unittest.TestCase):
         res = top_sort(self.depGraph)
         self.assertTrue(res.index('g') < res.index('e'))
 
+
+class TestSortColors(unittest.TestCase):
+    def test_sort_colors(self):
+        nums = [2,0,2,1,1,0]
+        sort_colors.sort_colors(nums)
+        self.assertEqual(nums, [0,0,1,1,2,2])
 
 if __name__ == "__main__":
     unittest.main()
