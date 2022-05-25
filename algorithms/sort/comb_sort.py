@@ -14,19 +14,19 @@ def comb_sort(arr):
     n = len(arr)
     gap = n
     shrink = 1.3
-    sorted = False
-    while not sorted:
+    done = False
+    while not done:
         gap = int(gap / shrink)
         if gap > 1:
-            sorted = False
+            done = False
         else:
             gap = 1
-            sorted = True
+            done = True
 
         i = 0
         while i + gap < n:
             if arr[i] > arr[i + gap]:
                 swap(i, i + gap)
-                sorted = False
+                done = False
             i = i + 1
     return arr
