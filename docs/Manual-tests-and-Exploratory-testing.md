@@ -4,13 +4,18 @@
 | Teszt kezdete   | 2022.05.25. 23:30 |
 | Időablak | |
 
-#Tesztek
-##Általános hibalehetőségek
+# Tesztek
+
+## Általános hibalehetőségek
+
 1. Nem működik megfelelően a függvény
 2. Nem tudja a függvény a különleges karaktereket kezelni
 3. Nem tudja a függvény az ékezetes karaktereket kezelni
-##reverse_string.py:
-###Tesztelési szempontok:
+
+## reverse_string.py:
+
+### Tesztelési szempontok:
+
 Összehasonlítunk manuálisan egy mondatot a fordítottját és a fordított-fordítottját.
 1. Általános teszt
    1. Egy angol mondattal teszteljük 
@@ -19,7 +24,8 @@
 3. Ékezetes karakteres teszt
    1. Egy ékezetes magyar mondattal teszteljük
 
-###Konklúzió:
+### Konklúzió:
+
 1. recursive(s)
    1. Általános teszt: *Megfelelt*
    2. Különleges karakteres teszt: *Megfelelt*
