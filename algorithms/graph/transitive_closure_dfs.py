@@ -13,19 +13,19 @@ class Graph:
         self.vertex_count = vertices
 
         # default dictionary to store graph
-        self.graph = {}
+        self.localgraph = {}
 
         # To store transitive closure
-        self.closure = [[0 for j in range(vertices)] for i in range(vertices)]
+        self.closure = [[0 for _ in range(vertices)] for _ in range(vertices)]
 
     def add_edge(self, source, target):
         """
         Adds a directed edge to the graph
         """
-        if source in self.graph:
-            self.graph[source].append(target)
+        if source in self.localgraph:
+            self.localgraph[source].append(target)
         else:
-            self.graph[source] = [target]
+            self.localgraph[source] = [target]
 
     def dfs_util(self, source, target):
         """
@@ -37,7 +37,7 @@ class Graph:
         self.closure[source][target] = 1
 
         # Find all the vertices reachable through target
-        for adjacent in self.graph[target]:
+        for adjacent in self.localgraph[target]:
             if self.closure[source][adjacent] == 0:
                 self.dfs_util(source, adjacent)
 

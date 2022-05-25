@@ -33,7 +33,7 @@ class TestSuite(unittest.TestCase):
             curr.next = Node(i)
             curr = curr.next
 
-        # node3 = 3
+     
         node3 = head.next.next
 
         # after delete_node => 1 -> 2 -> 4
