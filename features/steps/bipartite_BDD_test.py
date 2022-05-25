@@ -10,7 +10,7 @@ use_step_matcher("re")
 @given("a bipartite graph")
 def create_bipartite(context):
     global graph
-    graph = {1: {4, 5, 6}, 2: {4, 5, 6}, 3: {4, 5, 6}, 4: {1, 2, 3}, 5: {1, 2, 3}, 6: {1, 2, 3}}
+    graph = {0: [0, 0, 0, 1, 1, 1], 1: [0, 0, 0, 1, 1, 1], 2: [0, 0, 0, 1, 1, 1], 3: [1, 1, 1, 0, 0, 0], 4: [1, 1, 1, 0, 0, 0], 5: [1, 1, 1, 0, 0, 0]}
 
 
 
@@ -29,7 +29,7 @@ def result_true(context):
 @given("a non-bipartite graph")
 def create_non_bipartite(context):
     global graph
-    graph = {1: {2, 3}, 2: {1, 2}, 3: {1, 2}}
+    graph = {0: [0, 1, 0, 1, 1, 1], 1: [0, 0, 0, 1, 1, 1], 2: [0, 0, 0, 1, 1, 1], 3: [1, 1, 1, 0, 0, 0], 4: [1, 1, 1, 0, 0, 0], 5: [1, 1, 1, 0, 0, 0]}
 
 
 
