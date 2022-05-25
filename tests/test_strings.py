@@ -46,6 +46,8 @@ from algorithms.strings import (
 
 import unittest
 
+from algorithms.strings.strip_url_params import strip_url_params2
+
 
 class TestAddBinary(unittest.TestCase):
     """[summary]
@@ -719,6 +721,11 @@ class TestFizzbuzz(unittest.TestCase):
                     "Fizz", 13, 14, "FizzBuzz"]
         self.assertEqual(result, expected)
 
+#class TestStripUrlParam(unittest.TestCase):
+#    def test_stripurlparam2(self):
+#        self.assertEqual(strip_url_params2("www.mit.bme.hu"), "www.mit.bme.hu")
+#        self.assertEqual(strip_url_params2("www.mit.bme.hu?vmi=2&miv=3&vmi=2"), "www.mit.bme.hu?vmi=2&miv=3")
+#        self.assertEqual(strip_url_params2("www.mit.bme.hu/vmi=4&ami=5", "vmi=4"))
 
 if __name__ == "__main__":
     unittest.main()

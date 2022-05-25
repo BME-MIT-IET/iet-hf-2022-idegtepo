@@ -22,6 +22,8 @@ from algorithms.arrays import (
 
 import unittest
 
+from algorithms.strings.delete_reoccurring import delete_reoccurring_characters
+
 
 class TestJosephus(unittest.TestCase):
 
@@ -425,6 +427,10 @@ class TestNSum(unittest.TestCase):
                                else 1 if a[0] > b else 0),  # noqa: E501
                          [[[-9, 5], [8, 4]]])  # noqa: E501
 
+class TestReoccuring(unittest.TestCase):
+    def test_delete_reoccuring(self):
+        self.assertEqual(delete_reoccurring_characters("abbadelo"), "abdelo")
+        self.assertEqual(delete_reoccurring_characters("Longer string for testing"), "Longer stif")
 
 if __name__ == '__main__':
 
