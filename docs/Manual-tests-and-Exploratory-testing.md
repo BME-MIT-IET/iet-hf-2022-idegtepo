@@ -44,3 +44,20 @@
    3. Ékezetes karakteres teszt: *Megfelelt*
 
 A manuális tesztek alapján a függvények megfelelően működnek.
+
+## make_sentence.py:
+
+### Tesztelési szempontok:
+
+Megnézzük, hogy egy szót, hány másik szóból tudunk összerakni.
+1. Általános teszt
+   1. Angol szóval tesztelünk
+   2. Angol összetettebb szavakkal tesztelünk
+
+### Konklúzió:
+
+1. Általános teszt
+   1. Angol szó teszt: *Nem felelt meg*
+   2. Angol összetett szó teszt: *Nem felelt meg*
+
+A manuális tesztek alapján a függvény nem működik megfelelően. Mivel whitebox tesztelést végeztem észleltem, hogy a függvény van hibásan implementálva.
