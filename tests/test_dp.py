@@ -14,7 +14,8 @@ from algorithms.dp import (
     longest_increasing_subsequence_optimized,
     longest_increasing_subsequence_optimized2,
     int_divide,find_k_factor,
-    planting_trees, regex_matching
+    planting_trees, regex_matching,
+    num_decodings
 )
 
 
@@ -258,6 +259,12 @@ class TestRegexMatching(unittest.TestCase):
         p = "ab*"
         self.assertTrue(regex_matching.is_match(s, p))
 
+class TestNumDecodings(unittest.TestCase):
+    def test_num_decodings(self):
+        self.assertEqual(num_decodings(None), 0)
+        self.assertEqual(num_decodings("12"), 2)
+        self.assertEqual(num_decodings("15"), 2)
+        self.assertEqual(num_decodings("0"), 0)
 
 if __name__ == '__main__':
     unittest.main()

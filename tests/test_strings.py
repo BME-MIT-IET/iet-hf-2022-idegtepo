@@ -46,7 +46,7 @@ from algorithms.strings import (
 
 import unittest
 
-from algorithms.strings.strip_url_params import strip_url_params2
+from algorithms.strings.strip_url_params import strip_url_params2, strip_url_params3
 
 
 class TestAddBinary(unittest.TestCase):
@@ -385,6 +385,8 @@ class TestReverseWords(unittest.TestCase):
         self.assertEqual("pizza like I and kim keon am I", \
                          reverse_words("I am keon kim and I like pizza"))
 
+        self.assertEqual(reverse_words(None), " ")                 
+
 
 class TestRomanToInt(unittest.TestCase):
     """[summary]
@@ -498,6 +500,7 @@ class TestContainString(unittest.TestCase):
     def test_contain_string(self):
         self.assertEqual(-1, contain_string("mississippi", "issipi"))
         self.assertEqual(0, contain_string("Hello World", ""))
+        self.assertEqual(2, contain_string("hello", "ll"))
         self.assertEqual(2, contain_string("hello", "ll"))
 
 
@@ -721,11 +724,16 @@ class TestFizzbuzz(unittest.TestCase):
                     "Fizz", 13, 14, "FizzBuzz"]
         self.assertEqual(result, expected)
 
-#class TestStripUrlParam(unittest.TestCase):
-#    def test_stripurlparam2(self):
-#        self.assertEqual(strip_url_params2("www.mit.bme.hu"), "www.mit.bme.hu")
-#        self.assertEqual(strip_url_params2("www.mit.bme.hu?vmi=2&miv=3&vmi=2"), "www.mit.bme.hu?vmi=2&miv=3")
-#        self.assertEqual(strip_url_params2("www.mit.bme.hu/vmi=4&ami=5", "vmi=4"))
+class TestStripUrlParam(unittest.TestCase):
+    def test_strip_url_param2(self):
+        self.assertEqual(strip_url_params2("www.mit.bme.hu"), "www.mit.bme.hu")
+        self.assertEqual(strip_url_params2("www.mit.bme.hu?vmi=2&miv=3&vmi=2"), "www.mit.bme.hu?vmi=2&miv=3")
+        self.assertEqual(strip_url_params2("www.mit.bme.hu?vmi=4&a=5", ['a']), "www.mit.bme.hu?vmi=4")
+
+    def test_strip_url_param3(self):
+        self.assertEqual(strip_url_params3("www.mit.bme.hu"), "www.mit.bme.hu")
+        self.assertEqual(strip_url_params3("www.mit.bme.hu?vmi=2&miv=3&vmi=2"), "www.mit.bme.hu?vmi=2&miv=3")
+        self.assertEqual(strip_url_params3("www.mit.bme.hu?vmi=4&a=5", ['a']), "www.mit.bme.hu?vmi=4")
 
 if __name__ == "__main__":
     unittest.main()
