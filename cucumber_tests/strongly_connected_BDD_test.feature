@@ -6,6 +6,6 @@ Feature: Strongly connected graph test
     Then the graph is strongly connected
 
   Scenario: graph is a one way circle
-    Given a fully connected graph
+    Given a rarely connected graph
     When strong connection is tested
     Then the graph is not strongly connected

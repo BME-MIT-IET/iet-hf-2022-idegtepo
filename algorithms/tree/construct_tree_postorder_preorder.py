@@ -106,6 +106,6 @@ if __name__ == '__main__':
     post = [4, 5, 2, 6, 7, 3, 1]
     size = len(pre)
 
-    result = construct_tree(pre, post, size)
+    test_result = construct_tree(pre, post, size)
 
-    print(result)
+    print(test_result)
