@@ -9,8 +9,10 @@ from algorithms.linkedlist import (
     is_cyclic,
     merge_two_list, merge_two_list_recur,
     is_palindrome, is_palindrome_stack, is_palindrome_dict,
-    RandomListNode, copy_random_pointer_v1, copy_random_pointer_v2
+    RandomListNode, copy_random_pointer_v1, copy_random_pointer_v2,
+    delete_node
 )
+from algorithms.linkedlist.delete_node import delete_node
 
 
 class Node(object):
@@ -210,6 +212,41 @@ class TestSuite(unittest.TestCase):
         random_list_node4.next = random_list_node5
         random_list_node5.random = random_list_node3
 
+
+class TestDeleteNode(unittest.TestCase):
+
+    def test_delete_node(self):
+
+        # make linkedlist 1 -> 2 -> 3 -> 4
+        head = Node(1)
+        curr = head
+        for i in range(2, 6):
+            curr.next = Node(i)
+            curr = curr.next
+
+     
+        node3 = head.next.next
+
+        # after delete_node => 1 -> 2 -> 4
+        delete_node(node3)
+
+        curr = head
+        self.assertEqual(1, curr.val)
+
+        curr = curr.next
+        self.assertEqual(2, curr.val)
+
+        curr = curr.next
+        self.assertEqual(4, curr.val)
+
+        curr = curr.next
+        self.assertEqual(5, curr.val)
+
+        tail = curr
+        self.assertIsNone(tail.next)
+
+        self.assertRaises(ValueError, delete_node, tail)
+        self.assertRaises(ValueError, delete_node, tail.next)
 
 if __name__ == "__main__":
     unittest.main()

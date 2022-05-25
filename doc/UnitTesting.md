@@ -26,3 +26,8 @@ The limit contained 8 statements and 1 miss.
 
 ### I noticed that also in this file the **None** test was missing. After implementing the None tests the coverage was 100% for this file also.
 <p align="center"><img src="./static/LongNonRepAfter.png"></p>
+
+## Finding testable files
+
+### After digging in the coverage report I chose the files which had lower test coverages.
+

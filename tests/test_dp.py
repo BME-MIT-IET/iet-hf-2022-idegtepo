@@ -15,7 +15,9 @@ from algorithms.dp import (
     longest_increasing_subsequence_optimized2,
     int_divide,find_k_factor,
     planting_trees, regex_matching,
-    num_decodings
+    num_decodings,
+    num_decodings2,
+    longest_common_subsequence,
 )
 
 
@@ -265,6 +267,17 @@ class TestNumDecodings(unittest.TestCase):
         self.assertEqual(num_decodings("12"), 2)
         self.assertEqual(num_decodings("15"), 2)
         self.assertEqual(num_decodings("0"), 0)
+
+    def test_num_decodings2(self):
+        self.assertEqual(num_decodings2(None), 0)
+        self.assertEqual(num_decodings2("12"), 2)
+        self.assertEqual(num_decodings2("15"), 2)
+        self.assertEqual(num_decodings2("0"), 0)
+
+class TestLongestCommonSubsequence(unittest.TestCase):
+    def test_longest_common_sub(self):
+        self.assertEqual(longest_common_subsequence.longest_common_subsequence('abcdgh','aedfhr'), 3)
+
 
 if __name__ == '__main__':
     unittest.main()

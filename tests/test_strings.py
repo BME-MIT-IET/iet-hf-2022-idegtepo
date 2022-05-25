@@ -501,7 +501,7 @@ class TestContainString(unittest.TestCase):
         self.assertEqual(-1, contain_string("mississippi", "issipi"))
         self.assertEqual(0, contain_string("Hello World", ""))
         self.assertEqual(2, contain_string("hello", "ll"))
-        self.assertEqual(2, contain_string("hello", "ll"))
+        self.assertEqual(2, contain_string("medlo", "lo"))
 
 
 class TestCountBinarySubstring(unittest.TestCase):
