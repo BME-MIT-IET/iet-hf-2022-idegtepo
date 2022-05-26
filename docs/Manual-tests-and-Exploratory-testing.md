@@ -118,7 +118,7 @@ bővíteni a benne lévő abc-t. A felhasználói hibák kiküszöbölése vége
    1. 1, 3999 értékekre *Megfelelt*
    2. 0, 4000 értékekre
       1. 0: Erre a számra nincsen megfelelő római szám. A whitebox tesztelés miatt látható, hogy nincs lekezelve az 
-      eset. "Véletlenül" ad megfelelő eredmény. *Részben megfelelt*
+      eset. "Véletlenül" ad megfelelő eredményt. *Részben megfelelt*
       2. 4000: Hibát dob az algoritmus. *Nem felelt meg*
 3. Különleges eset tesztelés
    1. Negatív szám: Ezekre a számokra nincsen római szám. A program kivétel helyett ennek a képletnek megfelelő római 
@@ -131,5 +131,34 @@ A függvény megfelelően működik 1-3999 számokra. A többihez szükséges ex
 érkezik számsor, még nem tudja kezelni. Célszerű ezt később implementálni.
 
 
+## roman_to_int.py:
 
+### Tesztelési szempontok:
+1. Általános tesztelés
+   1. 1-3999 intervallumban lévő számokkal tesztelünk
+2. Határérték tesztelés
+   1. 1, 3999 értékekre tesztelés
+   2. 0, 4000 értékekre tesztelés
+3. Különleges eset tesztelés
+   1. Római szám betűit tartalmazó szöveg tesztelés (szintaktikailag nem helyes)
+   2. Szöveg bemenet tesztelés
+
+### Konklúzió:
+
+1. Általános teszt *Megfelelt*
+2. Határérték tesztelés
+   1. 1, 3999 értékekre *Megfelelt*
+   2. 0, 4000 értékekre
+      1. 0: Erre a számra nincsen megfelelő római szám. Hibát dob. *Nem felelt meg*
+      2. 4000: "Véletlenül" ad megfelelő eredményt. A whitebox tesztelés miatt látható, hogy nincs lekezelve az 
+      eset. *Részben megfelelt*
+3. Különleges eset tesztelés
+   1. Római szám betűit tartalmazó szöveg tesztelés (szintaktikailag nem helyes)
+      1. Szintaktikailag helytelen: A benne található értékeken műveletet végez és ez alapján ad egy számot. *Nem felelt meg*
+      2. 3-nál többszöri ismétlődést nem ellenőrzi. *Nem felelt meg*
+   2. Szöveg bemenet tesztelés
+      1. Stringben szöveg: Hibát dob az algoritmus. *Nem felelt meg*
+
+A függvény megfelelően működik 1-3999 számokra. Érdemes a szintaktikailag helytelen római számok betűit tartalmazó 
+stringeket külön kezelni. A többihez szükséges exceptionkezelést készíteni. 
 
