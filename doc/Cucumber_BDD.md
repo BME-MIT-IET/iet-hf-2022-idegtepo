@@ -24,3 +24,5 @@ We can test different **Scenarios** for one **Feature** :
  
  ![image](https://user-images.githubusercontent.com/56648499/170385628-124e4051-db19-4da6-846d-6e0e63c3f7b1.png)
  
+ These are the results of the implemented tests, we can see that all steps succeded, the scenarios were complete, the three features are tested.
+ 
