@@ -19,6 +19,6 @@ int_to_roman_test(3999, "MMMCMXCIX")
 int_to_roman_test(0, "_nothing")
 int_to_roman_test(-1, "_nothing")
 int_to_roman_test(-165, "_nothing")
-int_to_roman_test("asdf", "??????")
-int_to_roman_test("1234", "MCCXXXIV")
-int_to_roman_test(4000, "I̅V̅")
+int_to_roman_test("asdf", "??????") #hibát dob
+int_to_roman_test("1234", "MCCXXXIV") #hibát dob
+int_to_roman_test(4000, "I̅V̅") #hibát dob
