@@ -62,7 +62,7 @@ Megnézzük, hogy egy szót, hány másik szóból tudunk összerakni.
 
 A manuális tesztek alapján a függvény nem működik megfelelően. Mivel whitebox tesztelést végeztem észleltem, hogy a függvény van hibásan implementálva.
 
-## caesar_cipher_test.py:
+## caesar_cipher.py:
 
 ### Tesztelési szempontok:
 
@@ -98,3 +98,38 @@ A manuális tesztek alapján a függvény nem működik megfelelően. Mivel whit
 
 Amennyiben az algoritmust az angol abc karaktereiből álló szövegen kívüli szöveggel is szeretnénk használni, ki kell 
 bővíteni a benne lévő abc-t. A felhasználói hibák kiküszöbölése végett célszerű a bemeneteket ellenőrizni.
+
+## int_to_roman.py:
+
+### Tesztelési szempontok:
+1. Általános tesztelés
+   1. 1-3999 intervallumban lévő számokkal tesztelünk
+2. Határérték tesztelés
+   1. 1, 3999 értékekre tesztelés
+   2. 0, 4000 értékekre tesztelés
+3. Különleges eset tesztelés
+   1. Negatív szám tesztelés
+   2. Szöveg bemenet tesztelés
+
+### Konklúzió:
+
+1. Általános teszt *Megfelelt*
+2. Határérték tesztelés
+   1. 1, 3999 értékekre *Megfelelt*
+   2. 0, 4000 értékekre
+      1. 0: Erre a számra nincsen megfelelő római szám. A whitebox tesztelés miatt látható, hogy nincs lekezelve az 
+      eset. "Véletlenül" ad megfelelő eredmény. *Részben megfelelt*
+      2. 4000: Hibát dob az algoritmus. *Nem felelt meg*
+3. Különleges eset tesztelés
+   1. Negatív szám: Ezekre a számokra nincsen római szám. A program kivétel helyett ennek a képletnek megfelelő római 
+   számot ad vissza: 4000+(negatív_szám) *Nem felelt meg*
+   2. Szöveg bemenet tesztelés
+      1. Stringben számsor: Hibát dob az algoritmus. *Nem felelt meg*
+      2. Stringben szöveg: Hibát dob az algoritmus. *Nem felelt meg*
+
+A függvény megfelelően működik 1-3999 számokra. A többihez szükséges exceptionkezelést készíteni. Ha string típusban 
+érkezik számsor, még nem tudja kezelni. Célszerű ezt később implementálni.
+
+
+
+
