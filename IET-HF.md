@@ -1,6 +1,6 @@
 # IdEgTepo 
 
-A projektünk célja, hogy a algorithms projektben javítsuk a kódminősget, teszteljük
+A projektünk célja, hogy a algorithms projektben javítsuk a kódminőséget, teszteljük
 az implementált algorimusokat, detektáljuk a bugokat.
 Ezekhez a következő eszközöket választottuk:
 
@@ -19,6 +19,7 @@ A projekt tartalmaz előre megírt teszteket, melyek nem adnak teljes kódlefede
 
 Az egyes tesztelési methódusokat dokumentáltuk melyek a projekt doc mappájában
 találhatóak meg mark down formátumban.
+A dokumentációban használt képeket a static mappába helyeztük.
 
 ## Verziókezelő használat
 
