@@ -46,6 +46,8 @@ from algorithms.strings import (
 
 import unittest
 
+from algorithms.strings.strip_url_params import strip_url_params2, strip_url_params3
+
 
 class TestAddBinary(unittest.TestCase):
     """[summary]
@@ -381,7 +383,7 @@ class TestReverseWords(unittest.TestCase):
 
     def test_reverse_words(self):
         self.assertEqual("pizza like I and kim keon am I", \
-                         reverse_words("I am keon kim and I like pizza"))
+                         reverse_words("I am keon kim and I like pizza"))               
 
 
 class TestRomanToInt(unittest.TestCase):
@@ -497,6 +499,7 @@ class TestContainString(unittest.TestCase):
         self.assertEqual(-1, contain_string("mississippi", "issipi"))
         self.assertEqual(0, contain_string("Hello World", ""))
         self.assertEqual(2, contain_string("hello", "ll"))
+        self.assertEqual(3, contain_string("medlo", "lo"))
 
 
 class TestCountBinarySubstring(unittest.TestCase):
@@ -719,6 +722,16 @@ class TestFizzbuzz(unittest.TestCase):
                     "Fizz", 13, 14, "FizzBuzz"]
         self.assertEqual(result, expected)
 
+class TestStripUrlParam(unittest.TestCase):
+    def test_strip_url_param2(self):
+        self.assertEqual(strip_url_params2("www.mit.bme.hu"), "www.mit.bme.hu")
+        self.assertEqual(strip_url_params2("www.mit.bme.hu?vmi=2&miv=3&vmi=2"), "www.mit.bme.hu?vmi=2&miv=3")
+        self.assertEqual(strip_url_params2("www.mit.bme.hu?vmi=4&a=5", ['a']), "www.mit.bme.hu?vmi=4")
+
+    def test_strip_url_param3(self):
+        self.assertEqual(strip_url_params3("www.mit.bme.hu"), "www.mit.bme.hu")
+        self.assertEqual(strip_url_params3("www.mit.bme.hu?vmi=2&miv=3&vmi=2"), "www.mit.bme.hu?vmi=2&miv=3")
+        self.assertEqual(strip_url_params3("www.mit.bme.hu?vmi=4&a=5", ['a']), "www.mit.bme.hu?vmi=4")
 
 if __name__ == "__main__":
     unittest.main()

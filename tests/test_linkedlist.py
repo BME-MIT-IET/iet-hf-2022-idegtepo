@@ -9,8 +9,11 @@ from algorithms.linkedlist import (
     is_cyclic,
     merge_two_list, merge_two_list_recur,
     is_palindrome, is_palindrome_stack, is_palindrome_dict,
-    RandomListNode, copy_random_pointer_v1, copy_random_pointer_v2
+    RandomListNode, copy_random_pointer_v1, copy_random_pointer_v2,
+    delete_node, 
+    Node, partition
 )
+from algorithms.linkedlist.delete_node import delete_node
 
 
 class Node(object):
@@ -209,6 +212,77 @@ class TestSuite(unittest.TestCase):
         random_list_node3.next, random_list_node3.random = random_list_node4, random_list_node2
         random_list_node4.next = random_list_node5
         random_list_node5.random = random_list_node3
+
+
+class TestDeleteNode(unittest.TestCase):
+
+    def test_delete_node(self):
+
+        # make linkedlist 1 -> 2 -> 3 -> 4
+        head = Node(1)
+        curr = head
+        for i in range(2, 6):
+            curr.next = Node(i)
+            curr = curr.next
+
+     
+        node3 = head.next.next
+
+        # after delete_node => 1 -> 2 -> 4
+        delete_node(node3)
+
+        curr = head
+        self.assertEqual(1, curr.val)
+
+        curr = curr.next
+        self.assertEqual(2, curr.val)
+
+        curr = curr.next
+        self.assertEqual(4, curr.val)
+
+        curr = curr.next
+        self.assertEqual(5, curr.val)
+
+        tail = curr
+        self.assertIsNone(tail.next)
+
+        self.assertRaises(ValueError, delete_node, tail)
+        self.assertRaises(ValueError, delete_node, tail.next)
+
+class TestPartition(unittest.TestCase):
+    def test_partition(self):
+        a = Node("3")
+        b = Node("5")
+        c = Node("8")
+        d = Node("5")
+        e = Node("10")
+        f = Node("2")
+        g = Node("1")
+
+        a.next = b
+        b.next = c
+        c.next = d
+        d.next = e
+        e.next = f
+        f.next = g
+
+        a1 = Node("3")
+        b1 = Node("1")
+        c1 = Node("2")
+        d1 = Node("10")
+        e1 = Node("5")
+        f1 = Node("5")
+        g1 = Node("8")
+
+        a1.next = b1
+        b1.next = c1
+        c1.next = d1
+        d1.next = e1
+        e1.next = f1
+        f1.next = g1
+
+        partition(a, 5)
+        self.assertEqual(a, a1)
 
 
 if __name__ == "__main__":
