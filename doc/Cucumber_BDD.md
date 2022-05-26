@@ -22,6 +22,8 @@ We can test different **Scenarios** for one **Feature** :
  Behave is a Cucumber alternative for PyCharm. It can be installed using pip, for every feature it a makes a **.py** file, which declares a the code behind the steps.
  When behave command is given in the root directory, it evaluates all the **Features** and shows the results of the test.
  
+  ## Results
+ 
  ![image](https://user-images.githubusercontent.com/56648499/170385628-124e4051-db19-4da6-846d-6e0e63c3f7b1.png)
  
  These are the results of the implemented tests, we can see that all steps succeded, the scenarios were complete, the three features are tested.
